@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap"
 
 import SingleArticle from "./SingleArticle"
 import Result from "../types/Article"
+import { Link } from "react-router-dom"
 
 const Articles = () => {
     const [articles, setArticles] = useState<Result[]>([])
@@ -33,7 +34,7 @@ const Articles = () => {
 
                 {articles.map((a) => {
                     return (
-                        <Col xs={12} md={6} key={a.id} className="mb-5"><SingleArticle article={a} /></Col>)
+                        <Col xs={12} md={6} key={a.id} className="mb-5"><Link to={`/${a.id}`}><SingleArticle article={a} /></Link></Col>)
                 }
                 )}
             </Row>

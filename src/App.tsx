@@ -4,21 +4,28 @@ import './App.css'
 import MyNavbar from './components/myNavbar'
 import Articles from './components/Articles'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+import Details from './components/Detail'
 
 
 function App() {
 
   return (
-    <>
-      <div className="bg-dark">
-        <MyNavbar />
+    <BrowserRouter>
+      <>
+        <div className="bg-dark">
+          <MyNavbar />
 
 
 
-        <Container ><Articles /></Container>
+          <Container ><Routes><Route path='/:id' element={<Details />}></Route>
 
-      </div>
-    </>
+            <Route path="/" element={<Articles />}></Route></Routes></Container>
+
+        </div>
+      </>
+    </BrowserRouter>
 
   )
 }
