@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Col, Container, Row } from "react-bootstrap"
+import { Col, Row } from "react-bootstrap"
 
 import SingleArticle from "./SingleArticle"
 import Result from "../types/Article"
@@ -26,18 +26,19 @@ const Articles = () => {
         getArticles()
     }, [])
     return (
-        <div>
+        <>
             <h2>Your Space Flights news</h2>
-            <Container>
-                <Row>
-                    <Col xs={12} md={4}>
-                        {articles.map((a) => {
-                            return (<SingleArticle article={a} key={a.id} />)
-                        }
-                        )}</Col>
-                </Row>
-            </Container>
-        </div>
+
+            <Row>
+
+                {articles.map((a) => {
+                    return (
+                        <Col xs={12} md={6} key={a.id} className="mb-5"><SingleArticle article={a} /></Col>)
+                }
+                )}
+            </Row>
+
+        </>
 
     )
 }

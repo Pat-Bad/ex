@@ -1,8 +1,9 @@
 
-import { Col, Container, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import './App.css'
 import MyNavbar from './components/myNavbar'
 import Articles from './components/Articles'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 function App() {
@@ -12,11 +13,10 @@ function App() {
       <div className="bg-dark">
         <MyNavbar />
 
-        <Container>
-          <Row>
-            <Col xs={12}><Articles /></Col>
-          </Row>
-        </Container>
+
+
+        <Container ><Articles /></Container>
+
       </div>
     </>
 

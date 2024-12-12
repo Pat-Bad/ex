@@ -7,14 +7,16 @@ interface SingleArticleProps {
 }
 
 const SingleArticle = (props: SingleArticleProps) => {
-    return (<Card>
-        <Card.Img variant="top" src={props.article.image_url} style={{ height: '400px', width: '400px' }} />
-        <Card.Body>
-            <Card.Title>{props.article.title}</Card.Title>
-            <Card.Text>{props.article.summary}</Card.Text>
-            <Card.Text>{props.article.news_site}</Card.Text>
-        </Card.Body>
-    </Card>)
+    return (
+
+        <Card className="h-100 m-2">
+            <Card.Img variant="top" src={props.article.image_url} />
+            <Card.Body>
+                <Card.Title>{props.article.title}</Card.Title>
+                <Card.Text>{props.article.summary}</Card.Text>
+                <Card.Text>{props.article.news_site}</Card.Text>
+            </Card.Body>
+        </Card>)
 }
 
 export default SingleArticle
